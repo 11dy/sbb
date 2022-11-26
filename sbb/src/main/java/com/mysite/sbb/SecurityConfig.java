@@ -12,12 +12,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import com.mysite.sbb.user.UserSecurityService;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity //모든 요청 URL이 스프링 시큐리티의 제어를 받도록 만드는 애너테이션이다.
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     private final UserSecurityService userSecurityService;

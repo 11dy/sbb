@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import com.mysite.sbb.user.SiteUser;
 
 import com.mysite.sbb.question.Question;
 import lombok.Getter;
@@ -30,4 +31,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }
