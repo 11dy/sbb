@@ -3,19 +3,17 @@ package com.mysite.sbb.question;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
 import com.mysite.sbb.user.SiteUser;
+import java.util.Set;
+import javax.persistence.ManyToMany;
 
 import com.mysite.sbb.answer.Answer;
 import lombok.Getter;
 import lombok.Setter;
+
+
 
 @Getter
 @Setter
@@ -40,4 +38,7 @@ public class Question {
     private SiteUser author;
 
     private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }

@@ -55,4 +55,9 @@ public class QuestionService {
     public void delete(Question question) {
         this.questionRepository.delete(question);
     }
+
+    public void vote(Question question, SiteUser siteUser){ //Question 엔티티에 사용자를 추천인으로 저장> QuestionController 수정
+        question.getVoter().add(siteUser);
+        this.questionRepository.save(question);
+    }
 }
